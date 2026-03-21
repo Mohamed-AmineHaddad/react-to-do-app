@@ -2,19 +2,19 @@ import "./Task.css";
 import { useState } from "react";
 
 export default function Task(props) {
-    const [simpleMode, setMode] = useState(true);
+    const [expanding, setExpanding] = useState(false);
 
-    function switchMode() {
-        setMode(!simpleMode); 
+    function toggleTaskDetails() {
+        setExpanding(!expanding); 
     }
 
     return (
         <div className="task">
-            <button className="switch-mode-btn" onClick={switchMode}>{simpleMode ? '▸' : '▾'}</button>
+            <button className="toggle-task-details-btn" onClick={toggleTaskDetails}>{expanding ? '▾' : '▸'}</button>
             <p>{props.task.title}</p>
             <p>{props.task.date_echeance}</p>
 
-            {!simpleMode && (
+            {expanding && (
                 <div className="task-details">
                     <p>{props.task.description}</p>
                 </div>
