@@ -1,0 +1,10 @@
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 600px;
+    margin: auto;
+    padding: 12px;
+    border: 1px solid;
+    border-radius: 12px;
+}
