@@ -1,11 +1,12 @@
 import "./List.css";
-import data from '../../data.json';
 import Task from '../Task/Task';
-
-
-const tasks = data.taches;
+import { useContext } from "react";
+import { ToDoContext } from "../../context/ToDo";
 
 export default function List() {
+
+    const {tasks} = useContext(ToDoContext);
+
     return (
         <div className="task-list">
             <h2>Liste des tâches</h2>
