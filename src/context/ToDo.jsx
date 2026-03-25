@@ -24,14 +24,22 @@ export default function ToDo(props) {
     }
 
     const removeTask = (id) => {
-        const newTaskList = tasks.filter(value => value.id !== id);
+        const newTaskList = tasks.filter(t => t.id !== id);
         setTasks(newTaskList);
-        const newRelations = relations.filter(value => value.tache !== id);
+        const newRelations = relations.filter(t => t.tache !== id);
         setRelations(newRelations);
     }
 
+    const updateTask = (id, updatedFields) => {
+        const updatedTasks = tasks.map(t => {
+            if (t.id === id) return {...t, ...updatedFields};
+            return t;
+        })
+        setTasks(updatedTasks);
+    }
+
     return (
-        <ToDoContext.Provider value={{tasks, folders, relations, addTask, removeTask}}>
+        <ToDoContext.Provider value={{tasks, folders, relations, addTask, removeTask, updateTask}}>
             {props.children}
         </ToDoContext.Provider>
     );
