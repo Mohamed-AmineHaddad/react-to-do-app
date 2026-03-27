@@ -38,8 +38,19 @@ export default function ToDo(props) {
         setTasks(updatedTasks);
     }
 
+    const addFolder = (title, description, color) => {
+        const newFolder = {
+            "id": (folders.length > 0 ? Math.max(...folders.map(value => value.id)) + 1 : 201),
+            "title": title,
+            "description": description,
+            "color": color,
+            "icon": ""
+        };
+        setFolders([...folders, newFolder]);
+    }
+
     return (
-        <ToDoContext.Provider value={{tasks, folders, relations, addTask, removeTask, updateTask}}>
+        <ToDoContext.Provider value={{tasks, folders, relations, addTask, removeTask, updateTask, addFolder}}>
             {props.children}
         </ToDoContext.Provider>
     );

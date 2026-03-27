@@ -4,9 +4,14 @@ import List from "./components/List/List";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Modal from "./components/Modal/Modal";
+import TaskForm from "./components/Modal/TaskForm";
+import FolderForm from "./components/Modal/FolderForm";
 
 export default function App() { 
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [activeTab, setActiveTab] = useState('task'); // 'task' ou 'folder'
+
+    const closeModal = () => setIsModalOpen(false);
 
     return (
         <div className="app-container">
@@ -16,10 +21,31 @@ export default function App() {
             
             <Modal 
                 isOpen={isModalOpen} 
-                onClose={() => setIsModalOpen(false)}
+                onClose={closeModal}
                 title="Ajouter un élément"
             >
-                <p>Les formulaires de création viendront ici.</p>
+                <div className="modal-tabs">
+                    <button 
+                        className={`tab-btn ${activeTab === 'task' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('task')}
+                    >
+                        Nouvelle Tâche
+                    </button>
+                    <button 
+                        className={`tab-btn ${activeTab === 'folder' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('folder')}
+                    >
+                        Nouveau Dossier
+                    </button>
+                </div>
+
+                <div className="modal-body">
+                    {activeTab === 'task' ? (
+                        <TaskForm onComplete={closeModal} />
+                    ) : (
+                        <FolderForm onComplete={closeModal} />
+                    )}
+                </div>
             </Modal>
         </div>
     );
