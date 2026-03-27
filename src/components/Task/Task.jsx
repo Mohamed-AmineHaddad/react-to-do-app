@@ -13,6 +13,7 @@ export default function Task(props) {
     const [editedTitle, setEditedTitle] = useState(props.task.title);
     const [editedDesc, setEditedDesc] = useState(props.task.description || '');
     const [editedEtat, setEditedEtat] = useState(props.task.etat);
+    const [editedDate, setEditedDate] = useState(props.task.date_echeance);
 
     function toggleTaskDetails() {
         setExpanding(!expanding); 
@@ -23,7 +24,8 @@ export default function Task(props) {
         updateTask(props.task.id, {
             title: editedTitle,
             description: editedDesc,
-            etat: editedEtat
+            etat: editedEtat,
+            date_echeance: editedDate
         });
         setIsEditing(false);
     };
@@ -46,7 +48,16 @@ export default function Task(props) {
                 <p className="task-title">{props.task.title}</p>
             )}
 
-            <p className="task-date">{props.task.date_echeance}</p>
+            {isEditing ? (
+                <input 
+                    type="date"
+                    className="edit-date-input"
+                    value={editedDate}
+                    onChange={(e) => setEditedDate(e.target.value)}
+                />
+            ) : (
+                <p className="task-date">{props.task.date_echeance}</p>
+            )}
 
             <div className="task-folders">
                 {visibleFolders.map(folder => (
@@ -81,6 +92,13 @@ export default function Task(props) {
                     ) : (
                         <>
                             <p className="task-description">{props.task.description || <i>Aucune description.</i>}</p>
+                            
+                            {props.task.equipiers && props.task.equipiers.length > 0 && (
+                                <div className="task-equipiers">
+                                    <strong>Équipiers :</strong> {props.task.equipiers.map(e => typeof e === 'string' ? e : e.name).join(', ')}
+                                </div>
+                            )}
+
                             <div className="task-footer">
                                 <span className="task-status-tag">{props.task.etat}</span>
                                 <button className="edit-btn" onClick={() => setIsEditing(true)}>Modifier</button>

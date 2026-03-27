@@ -57,13 +57,25 @@
 }
 
 /* Edit Mode */
-.edit-title-input {
+.edit-title-input, .edit-date-input {
   font-family: inherit;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 0.9rem;
   padding: 0.25rem 0.5rem;
   border: 1px solid var(--primary);
   border-radius: 4px;
+}
+
+.edit-title-input {
+  font-weight: 600;
+}
+
+.task-equipiers {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: #64748b;
+  padding: 0.5rem;
+  background: #f8fafc;
+  border-radius: 6px;
 }
 
 .edit-mode-container {
