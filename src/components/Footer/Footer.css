@@ -1,0 +1,26 @@
+.app-footer {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.add-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.add-btn:hover {
+  transform: scale(1.1);
+  background-color: #357abd;
+}
