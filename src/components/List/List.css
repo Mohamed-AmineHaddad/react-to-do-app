@@ -9,3 +9,13 @@
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
+
+.no-tasks {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  color: #64748b;
+  font-style: italic;
+}

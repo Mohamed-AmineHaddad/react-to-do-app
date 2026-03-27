@@ -1,0 +1,30 @@
+.sorting-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.sorting-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.sorting-select {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: #1e293b;
+  background: white;
+  cursor: pointer;
+}
+
+.sorting-select:focus {
+  outline: none;
+  border-color: var(--primary);
+}

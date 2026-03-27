@@ -56,6 +56,83 @@
   color: #475569;
 }
 
+/* Edit Mode */
+.edit-title-input {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+}
+
+.edit-mode-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.edit-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.edit-group label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.edit-group textarea, .edit-group select {
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.save-btn, .edit-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.cancel-btn {
+  background: #f1f5f9;
+  color: #475569;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.task-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.task-status-tag {
+  background: #f1f5f9;
+  color: #475569;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
 p {
   margin: 0;
 }

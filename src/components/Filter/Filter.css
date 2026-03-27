@@ -1,0 +1,33 @@
+.filters-container {
+  background: #ffffff;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-input, .filter-select {
+  width: 100%;
+  padding: 0.625rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: #1e293b;
+  background: #f8fafc;
+}
+
+.filter-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.filter-input:focus, .filter-select:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: #ffffff;
+}
