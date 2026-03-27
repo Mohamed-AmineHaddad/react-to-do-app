@@ -1,11 +1,11 @@
 .folder-tag {
-	display: inline-block;
-	padding: 2px 8px;
-	margin-right: 6px;
-	margin-bottom: 6px;
-	border: 1px solid #7fa8c4;
-	border-radius: 8px;
-	font-size: 12px;
-	font-weight: 600;
-	background-color: #eaf6ff;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+  color: white;
+  font-weight: 500;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+  display: inline-block;
+  white-space: nowrap;
+  border: 1px solid rgba(0,0,0,0.1);
 }

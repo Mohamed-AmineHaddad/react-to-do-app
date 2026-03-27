@@ -16,8 +16,8 @@ export default function Task(props) {
             <button className="toggle-task-details-btn" onClick={toggleTaskDetails}>
                 {expanding ? '▾' : '▸'}
             </button>
-            <p>{props.task.title}</p>
-            <p>{props.task.date_echeance}</p>
+            <p className="task-title">{props.task.title}</p>
+            <p className="task-date">{props.task.date_echeance}</p>
 
             <div className="task-folders">
                 {visibleFolders.map(folder => (
